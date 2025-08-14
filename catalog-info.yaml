@@ -1,0 +1,33 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ref-q-developer
+  description: Amazon Q Developer Reference Implementation
+  labels:
+    category: project
+    release: stable
+    environment: dev
+  tags:
+    - java
+    - python
+    - nodejs
+    - react
+    - typescript
+    - amplify
+    - amazon-q
+  annotations:
+    github.com/project-slug: irahara-ambient/ref-q-developer-prs
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/source-template: template:default/tmpl-amplify
+spec:
+  type: service
+  system: system:default/internal-developer-platform
+  owner: group:default/pe-ld
+  dependsOn:
+    - group:default/pe-ld
+    - group:default/tmc-pe
+    - component:tmpl-amplify
+    - group:default/pe-po
+    - group:default/pe-dev
+  subcomponentOf: tmpl-amplify
+  lifecycle: experimental
