@@ -1,0 +1,55 @@
+{
+  "name": "amplify",
+  "packageManager": "yarn@4.9.2",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/app",
+    "packages/backend",
+    "cdk"
+  ],
+  "resolutions": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "scripts": {
+    "start:app": "yarn workspace @apps/app start",
+    "web:app": "yarn workspace @apps/app web",
+    "build:app": "yarn workspace @apps/app build:sandbox",
+    "storybook:app": "yarn workspace @apps/app storybook",
+    "storybook:app:web": "yarn workspace @apps/app storybook:web",
+    "start:web": "yarn workspace @apps/web dev",
+    "build:web": "yarn workspace @apps/web build:sandbox",
+    "storybook:web": "yarn workspace @apps/web storybook",
+    "lint:app": "yarn workspace @apps/app lint",
+    "lint:web": "yarn workspace @apps/web lint",
+    "lint:backend": "yarn workspace @packages/backend lint",
+    "lint:cdk": "yarn workspace cdk lint",
+    "ampx-secret": "yarn workspace @packages/backend ampx-secret",
+    "ampx-set-db-secret": "yarn workspace @packages/backend ampx-set-secret",
+    "ampx-gen-schema": "yarn workspace @packages/backend ampx-gen-schema",
+    "ampx-sandbox": "yarn workspace @packages/backend ampx-sandbox",
+    "ampx-sandbox-delete": "yarn workspace @packages/backend ampx-sandbox-delete",
+    "init-lefthook": "yarn lefthook uninstall && yarn lefthook install"
+  },
+  "devDependencies": {
+    "@babel/core": "7.28.0",
+    "@biomejs/biome": "2.1.3",
+    "esbuild": "0.25.8",
+    "lefthook": "1.12.2"
+  },
+  "dependencies": {
+    "@babel/core": "7.28.0",
+    "@babel/plugin-proposal-export-default-from": "7.27.1",
+    "@babel/plugin-syntax-export-default-from": "7.27.1",
+    "@babel/plugin-transform-flow-strip-types": "7.27.1",
+    "@babel/plugin-transform-private-methods": "7.27.1",
+    "@babel/plugin-transform-private-property-in-object": "7.27.1",
+    "@babel/plugin-transform-runtime": "7.28.0",
+    "babel-preset-expo": "13.2.3",
+    "expo": "53.0.20",
+    "expo-router": "5.1.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  }
+}
